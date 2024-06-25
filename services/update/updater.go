@@ -168,6 +168,7 @@ func (u *Manager) downloadEpisodes(ctx context.Context, feedConfig *feed.Config)
 
 		if !matchFilters(episode, &feedConfig.Filters) {
 			return nil
+			pageSize++ //Just Skip filtered episode, but still try to colelct @pageSize episodes
 		}
 
 		// Limit the number of episodes downloaded at once
